@@ -4,20 +4,19 @@
 	</head>
 	<body>
 
-		<div>
-			<h1><a href="">Rose's blog</a></h1>
-		</div>
+	<div>
+    	<h1><a href="/">Rose's Django Girls Blog</a></h1>
+	</div>
 
-		<div>
-			<p>Published: 9.23.2016, 2:03 PM</p>
-			<h2><a href="">My first post</a></h2>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id lobortis tellus. Ut sit amet lorem quis nulla tempus pulvinar tincidunt in diam. Ut nec justo blandit, hendrerit metus ac, commodo erat. Cras sagittis est vitae auctor aliquet. Donec vitae sapien sapien. Etiam porttitor nisi sit amet elit euismod, vitae elementum justo dapibus. Vivamus tempus feugiat ex. Suspendisse ac magna vulputate arcu venenatis posuere. Vivamus a nisi nibh. Maecenas consectetur feugiat velit, sed vestibulum risus consectetur.</p>
-		</div>
+	{% for post in posts %}
 
-		<div>
-			<p>Published: 9.24.2016, 2:05 PM</p>
-			<h2><a href="">My second post</a></h2>
-			<p>Greetings to all! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id lobortis tellus. Ut sit amet lorem quis nulla tempus pulvinar tincidunt in diam. Ut nec justo blandit, hendrerit metus ac, commodo erat. Cras sagittis est vitae auctor aliquet. Donec vitae sapien sapien. Etiam porttitor nisi sit amet elit euismod, vitae elementum justo dapibus. Vivamus tempus feugiat ex. Suspendisse ac magna vulputate arcu venenatis posuere. Vivamus a nisi nibh. Maecenas consectetur feugiat velit, sed vestibulum risus consectetur.</p>
-		</div>
+    <div>
+        <p><i>published: {{ post.published_date }}</i></p>
+        <h1><a href="">{{ post.title }}</a></h1>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+
+	{% endfor %}
+
 	</body>
 </html>
